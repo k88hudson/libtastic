@@ -39,29 +39,29 @@ new Libtastic();
 </script>
 ```
 
-## Some opinions about cross-compatible JS libraries
+## Some opinions about cross-compatible JS libraries, and where to look for examples in this repo
 
 When you are publishing a library for Node and the browser, you should always consider the specific needs of your consumers. What version(s) should you support? How do you maintain backwards compatibility? What build systems are they likely to use? However, there are some things which I find are true most of the time:
 
-#### You should have unit tests.
+### You should have unit tests.
 
 You know this.
 
 In this project, the unit tests are in the `test/unit/` directory. You run them with `npm test`.
 
-#### You should have CI for your unit tests that runs them in both node and the browser
+### You should have CI for your unit tests that runs them in both node and the browser
 
 Don't rely on your own memory of the differences between Node and the browser – running your tests in both environments makes sure they really do run in both environments.
 
 In this project, `npm test` triggers a mocha test task AND a karma test task, which run in node and Firefox respectively. You should have a look at the `test/karma.conf.js` file for how test-running is set up for Firefox.
 
-#### Whenever possible, you should avoid requiring globally installed dependencies
+### Whenever possible, you should avoid requiring globally installed dependencies
 
 Sometimes this isn't possible, but if you can, install dependencies AND dev dependencies (like mocha, karma, etc.) via npm with `--save`/`--save-dev` and use the npm scripts section of `package.json` to run tasks like test running, linting, etc. This makes it easier to use and work on your library and prevents unexpected version mismatches.
 
 In this project, all tasks are defined as scripts in `package.json` and can be run by invoking `npm run [taskname]`.
 
-#### You should automate your publish process as much as possible
+### You should automate your publish process as much as possible
 
 There are a few reasons for this. One, it helps prevent human error, like forgetting to publish a tag. Two, if helps decouple the publishing process from your own environment/authentication, which is especially helpful if you're working with a team.
 
@@ -69,32 +69,32 @@ You know this, of course – the trade off is that automating deploys is often t
 
 In this project, you can publish by running the `npm version` task, which triggers an automated process of pushing a tag to Github and Travis publishing that tag to npm. See the `.travis.yml` file and the "More about publishing" section below for more details.
 
-#### You should (probably) include coverage reporting
+### You should (probably) include coverage reporting
 
 There are a lot of (valid) opinions about how much test coverage matters, but regardless of what percentage you're targeting, test coverage reporting can actually reveal accidental bugs and help automatically remind new contributors to include tests with patches.
 
 In this project, code is instrumented with instanbul, which generates local coverage reports in `coverage/` every time the mocha tests are run. On Travis, these coverage reports are sent to Coveralls, and reported back to Github. You should look at the `test:node` task for how istanbul is set up, and [this page](https://coveralls.io/github/k88hudson/libtastic) for an example of what Coveralls looks like.
 
-#### You should lint your code
+### You should lint your code
 
 Linting helps new contributors, catches some bugs, and makes code easier to read.
 
 This project uses `eslint` for linting. You should take a look at the `.eslintignore` and `.eslintrc` files and the `test:lint` task in `package.json` if you want to learn more.
 
 
-#### You should include a pre-built file for browser JS users without module loaders or build tools
+### You should include a pre-built file for browser JS users without module loaders or build tools
 
 Not everyone uses a build tool or module loader for browser JS, such as Webpack, Browserify, etc. In addition, having a pre-built version available also makes it easy for someone to quickly prototype or create a test case in an online code sharing tool. For this reason, I like to distribute a pre-built, production-optimized version of my library, that exports the library as a global.
 
 This project uses Webpack to generate a pre-built version, which is configured in `webpack.config.js` and triggered by the `npm run package` command defined in `package.json`. The actual asset is called `libtastic.min.js`, and is added to the `dist/` folder.
 
-#### You should not commit compiled dependencies
+### You should not commit compiled dependencies
 
 Not everyone agrees with this, but I'm personally not a fan of committing compiled dependencies – they make git histories harder to read and add a lot of noise. However, npm presents a solution for this – you can still include your built files in the published package even if they are in `.gitignore`, by explicitly excluding them in `.npmignore` with the `!` operator.
 
 In this project, the `dist/` folder is gitignored (it gets generated if you run `npm run package`). I don't like to use the task name `build`, because `npm run build` can be easily confused with `npm build`, which already exists in the npm cli. Take a look at the `.npmignore` to see how it is excluded from ignoring, and don't forget to actually run your `npm run package` command before publishing in `.travis.yml`!
 
-#### You might want to consider integration tests
+### You might want to consider integration tests
 
 This project also includes an integration test, which can be found in `test/integration/`. It is configured in `karma.integration.config.js` and run with karma. What it does is load the pre-built file from the `dist/` directory into the browser, and ensures that the global variable `Libtastic` exists. This test ensures:
 
