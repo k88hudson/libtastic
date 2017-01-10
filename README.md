@@ -5,6 +5,10 @@
 
 This is an example of how to write and publish a JS library for node and the browser, including tests, publish scripts, and other stuff.
 
+It uses mocha, chai, and karma for testing, istanbul for coverage reporting, eslint for linting, webpack for bundling, Travis and Coveralls for CI, and npm for publishing.
+
+If you're building something that doesn't need to be published to npm, requires more intensive functional testing, and/or you want to use Task Cluster for CI, you might consider taking a look at Standard8's [example-addon-repo](https://github.com/mozilla/example-addon-repo).
+
 ## Things you will need as a library author
 
 - node 6+, npm 3+
@@ -94,3 +98,4 @@ In order to get this to work, you must do two things.
 - A sample README with good basic documentation?
 - explain limitations for es6 / webpack optimization
 - es5 transpilation?
+- node or browser specific tests
