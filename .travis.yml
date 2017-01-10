@@ -26,7 +26,12 @@ install:
 script:
   - npm test
 
-# deploy:
+deploy:
+  provider: npm
+  email: k88hudson+libtastic@gmail.com
+  on:
+    branch: master
+    tags: true
 
 # Turns off email notifications for travis. Turn this back on if you want them.
 notifications:
