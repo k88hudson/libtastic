@@ -4,7 +4,7 @@
   "description": "An example lib for node and the browser",
   "main": "src/libtastic.js",
   "scripts": {
-    "bundle": "webpack",
+    "bundle": "webpack --optimize-ocurrence-order",
     "start": "live-server . --port=1987 & npm run bundle -- -w",
     "test": "npm run bundle && npm run test:node && npm run test:browser && npm run test:integration",
     "test:node": "mocha test/unit/**.js",
