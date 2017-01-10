@@ -2,11 +2,11 @@
 
 ![Travis status](https://travis-ci.org/k88hudson/libtastic.svg?branch=master)
 
-This is an example of how to write and publish a JS library for node and the browser, including tests, publish scripts, and an example for use during development.
+This is an example of how to write and publish a JS library for node and the browser, including tests, publish scripts, and other useful things.
 
-## What is supported by this library?
+## What is supported?
 
-This library is designed to be usable in:
+This repo shows you how publish a library designed to be usable in:
 
 - node 6+, with `npm install` and `require`,
 - a modern browser, with `npm install` and `require`, via a build system (e.g. Webpack or Browserify), or
@@ -49,3 +49,30 @@ There two kinds of tests included. Both use `mocha` and `chai` for test definiti
 2. An integration test in `test/integration/browser.test.js` to make sure the minified browser distribution (i.e. `dist/libtastic.min.js`) was built correctly. This is also run with karma.
 
 All the tests can be run with `npm test`, and are called from commands in `package.json`.
+
+# How to publish a new version
+
+## tdlr;
+
+Just run `npm version [patch/minor/major]`. That's it.
+
+## How this works
+
+Use [npm version](https://docs.npmjs.com/cli/version). Enter `npm version patch` in your terminal for a new patch version, `npm version minor` for a minor version, etc. This will trigger the following:
+
+1. Your tests will run (because of the `preversion` script defined in `package.json`)
+2. Your `package.json` will be updated with the new version number and a git tag will be created.
+3. Your code/tag will be pushed to `origin master`.  Note that if you normally push code to somewhere other than `origin master`, or if you don't want to automatically push, you should update the `postversion` script.
+4. Your code/tag will be published to npm from Travis CI after the build is finished.
+
+# Travis CI
+
+The Travis configuration in `.travis.yml` sets up a few things for CI:
+
+- installs Firefox and runs the mocha and karma tests
+- if a new tag was pushed, it will publish the new version to npm
+
+In order to get this to work, you must do two things.
+
+1. Turn on building for your repo on https://travis-ci.org, by signing in and flipping the switch, or by using the travis cli: `travis enable -r yourgithub/yourrepo`
+2. Add a new email and encrypted api key to the `deploy` section of `.travis.yml` for npm publishing. You can find instructions for finding your key and encrypting it [here](https://docs.travis-ci.com/user/deployment/npm/). I usually create and authenticate a new single-purpose npm account (such as libtastic-publisher) for this publishing, but you can also just use your personal account.

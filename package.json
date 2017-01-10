@@ -9,7 +9,9 @@
     "test": "npm run bundle && npm run test:node && npm run test:browser && npm run test:integration",
     "test:node": "mocha test/unit/**.js",
     "test:browser": "karma start test/karma.conf.js",
-    "test:integration": "karma start test/karma.integration.conf.js"
+    "test:integration": "karma start test/karma.integration.conf.js",
+    "preversion": "npm test",
+    "postversion": "git push origin master --tags"
   },
   "author": "k88hudson",
   "license": "MIT",
