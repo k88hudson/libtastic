@@ -4,10 +4,10 @@
   "description": "An example lib for node and the browser",
   "main": "src/libtastic.js",
   "scripts": {
-    "bundle": "webpack -p",
+    "bundle": "webpack",
     "start": "live-server . --port=1987 & npm run bundle -- -w",
     "test": "npm run bundle && npm run test:node && npm run test:browser && npm run test:integration",
-    "test:node": "mocha test/**.js",
+    "test:node": "mocha test/unit/**.js",
     "test:browser": "karma start test/karma.conf.js",
     "test:integration": "karma start test/karma.integration.conf.js"
   },
