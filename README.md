@@ -85,7 +85,7 @@ In order to get this to work, you must do two things.
 2. Add a new email and encrypted api key to the `deploy` section of `.travis.yml` for npm publishing. You can find instructions for finding your key and encrypting it [here](https://docs.travis-ci.com/user/deployment/npm/). I usually create and authenticate a new single-purpose npm account (such as libtastic-publisher) for this publishing, but you can also just use your personal account.
 
 ## TODO
-
+- A sample README with good basic documentation?
 - explain limitations for es6 / webpack optimization
 - es5 transpilation?
 - coverage reporting
