@@ -5,8 +5,9 @@
   "main": "src/libtastic.js",
   "scripts": {
     "bundle": "webpack --optimize-ocurrence-order",
-    "start": "live-server . --port=1987 & npm run bundle -- -w",
+    "tdd": "npm run test:browser -- --no-single-run",
     "test": "npm run bundle && npm run test:node && npm run test:browser && npm run test:integration",
+    "test:lint": "eslint . --ext .js",
     "test:node": "istanbul cover _mocha -- test/unit/**.js",
     "test:browser": "karma start test/karma.conf.js",
     "test:integration": "karma start test/karma.integration.conf.js",
@@ -23,6 +24,7 @@
     "karma-chai": "^0.1.0",
     "karma-firefox-launcher": "^1.0.0",
     "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.1",
     "karma-webpack": "^1.8.1",
     "mocha": "^3.2.0",
     "webpack": "^1.14.0"

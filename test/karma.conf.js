@@ -4,6 +4,7 @@ module.exports = function(config) {
     browsers: ["Firefox"],
     frameworks: ["mocha"],
     files: ["./unit/**/*.test.js"],
+    reporters: ["mocha"],
 
     // Applies webpack to the test files, so they can use "require"
     preprocessors: {"./unit/**/*.test.js": ["webpack"]},
