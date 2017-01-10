@@ -1,6 +1,6 @@
 # libtastic
 
-![Travis status](https://travis-ci.org/k88hudson/libtastic.svg?branch=master)
+[![Build Status](https://travis-ci.org/k88hudson/libtastic.svg?branch=master)](https://travis-ci.org/k88hudson/libtastic)
 [![Coverage Status](https://coveralls.io/repos/github/k88hudson/libtastic/badge.svg)](https://coveralls.io/github/k88hudson/libtastic)
 
 This is an example of how to write and publish a JS library for node and the browser, including tests, publish scripts, and other stuff.
