@@ -94,5 +94,3 @@ In order to get this to work, you must do two things.
 - A sample README with good basic documentation?
 - explain limitations for es6 / webpack optimization
 - es5 transpilation?
-- coverage reporting
-- linting
