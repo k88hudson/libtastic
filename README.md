@@ -63,7 +63,7 @@ There two kinds of tests included. Both use `mocha` and `chai` for test definiti
 
 All the tests can be run with `npm test`, and are called from commands in `package.json`.
 
-# TDD
+### TDD
 
 You can run the tests continuously for development with `npm run tdd`. This will start up a browser using karma, so that you can debug your tests easily.
 
