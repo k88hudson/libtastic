@@ -5,7 +5,7 @@
 
 ## What is this?
 
-Libtastic is an example repository that demonstrates how to to write and publish a JS library for Node and the browser. You might find it useful as a scaffold or an example to work from if you are writing such a library and questions around testing, automation, code quality, or how to distribute cross-compatible builds.
+Libtastic is an example repository that demonstrates how to to write and publish a JS library for Node and the browser. You might find it useful as a scaffold or an example to work from if you are writing such a library and have questions around testing, automation, code quality, or how to distribute cross-compatible builds.
 
 If you're building something that doesn't need to be published to npm, requires more intensive functional testing, and/or you want to use Task Cluster for CI, you might consider taking a look at Standard8's [example-addon-repo](https://github.com/mozilla/example-addon-repo).
 
@@ -39,7 +39,7 @@ new Libtastic();
 </script>
 ```
 
-## Some opinions about cross-compatible JS libraries, and where to look for examples in this repo
+## Some opinions, and where they are implemented in this repo
 
 When you are publishing a library for Node and the browser, you should always consider the specific needs of your consumers. What version(s) should you support? How do you maintain backwards compatibility? What build systems are they likely to use? However, there are some things which I find are true most of the time:
 
