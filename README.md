@@ -1,5 +1,7 @@
 # libtastic
 
+![Travis status](https://travis-ci.org/k88hudson/libtastic.svg?branch=master)
+
 This is an example of how to write and publish a JS library for node and the browser, including tests, publish scripts, and an example for use during development.
 
 ## What is supported by this library?
@@ -47,6 +49,3 @@ There two kinds of tests included. Both use `mocha` and `chai` for test definiti
 2. An integration test in `test/integration/browser.test.js` to make sure the minified browser distribution (i.e. `dist/libtastic.min.js`) was built correctly. This is also run with karma.
 
 All the tests can be run with `npm test`, and are called from commands in `package.json`.
-
-
-##
