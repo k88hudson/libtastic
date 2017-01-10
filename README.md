@@ -9,14 +9,6 @@ It uses mocha, chai, and karma for testing, istanbul for coverage reporting, esl
 
 If you're building something that doesn't need to be published to npm, requires more intensive functional testing, and/or you want to use Task Cluster for CI, you might consider taking a look at Standard8's [example-addon-repo](https://github.com/mozilla/example-addon-repo).
 
-## Things you will need as a library author
-
-- node 6+, npm 3+
-- a Travis CI account
-- the Travis cli (for encrypting your npm auth token)
-- an npm account
-- Coveralls account linked to your Github (if you want coverage reporting with Coveralls)
-
 ## What is supported?
 
 This repo shows you how publish a library to npm that is usable in:
@@ -46,6 +38,14 @@ new Libtastic();
 new Libtastic();
 </script>
 ```
+
+## Things you will need as a library author
+
+- node 6+, npm 3+
+- a Travis CI account
+- the Travis cli (for encrypting your npm auth token)
+- an npm account
+- Coveralls account linked to your Github (if you want coverage reporting with Coveralls)
 
 ## The source files
 
