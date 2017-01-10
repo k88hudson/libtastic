@@ -7,7 +7,9 @@
 
 Libtastic is an example repository that demonstrates how to to write and publish a JS library for Node and the browser. You might find it useful as a scaffold or an example to work from if you are writing such a library and have questions around testing, automation, code quality, or how to distribute cross-compatible builds.
 
-If you're building something that doesn't need to be published to npm, requires more intensive functional testing, and/or you want to use Task Cluster for CI, you might consider taking a look at Standard8's [example-addon-repo](https://github.com/mozilla/example-addon-repo).
+I wrote this based on my my experience writing/maintaining a lot of small Javascript libraries for Mozilla, many of which are internal.
+
+If you're a colleague building something that doesn't need to be published to npm, requires more intensive functional testing, and/or you want to use Task Cluster for CI, you might consider taking a look at Standard8's [example-addon-repo](https://github.com/mozilla/example-addon-repo). It shares a lot of the same principles but is more specifically focused on add-on development, rather than cross-compatible JS libraries.
 
 ## What is supported?
 
