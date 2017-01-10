@@ -5,7 +5,7 @@
 
 ## What is this?
 
-Libtastic is an example repository that demonstrates how to to write and publish a JS library for Node and the browser. You might find it useful as a scaffold or an example to work from if you are writing such a library and have questions around testing, automation, code quality, or how to distribute cross-compatible builds.
+Libtastic is an example repository that demonstrates **how to to write and publish a JS library for Node and browsers**. You might find it useful as a scaffold or an example to work from if you are writing such a library and have questions about testing, automation, code quality, or how to distribute cross-compatible builds.
 
 I wrote this based on my my experience writing/maintaining a lot of small Javascript libraries for Mozilla, many of which are internal.
 
