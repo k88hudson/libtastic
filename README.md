@@ -82,17 +82,27 @@ Use [npm version](https://docs.npmjs.com/cli/version). Enter `npm version patch`
 3. Your code/tag will be pushed to `origin master`.  Note that if you normally push code to somewhere other than `origin master`, or if you don't want to automatically push, you should update the `postversion` script.
 4. Your code/tag will be published to npm from Travis CI after the build is finished. Note that although they are gitignored, built assets in `dist/` WILL be published to npm because they are re-included in `.npmignore`.
 
+### Why publish with Travis?
+
+This is just my opinion, but:
+
+- it's pretty easy to set up
+- it prevents (some) human errors that occur with manual publishing, such as forgetting to publish
+- it doesn't require multiple owners for the npm package, just push access to the repo
+
 ## Travis CI
 
 The Travis configuration in `.travis.yml` sets up a few things for CI:
 
 - installs Firefox and runs the mocha and karma tests
+- reports coverage to Coveralls
 - if a new tag was pushed, it will publish the new version to npm
 
-In order to get this to work, you must do two things.
+In order to get this to work, you must do three things.
 
 1. Turn on building for your repo on https://travis-ci.org, by signing in and flipping the switch, or by using the travis cli: `travis enable -r yourgithub/yourrepo`
 2. Add a new email and encrypted api key to the `deploy` section of `.travis.yml` for npm publishing. You can find instructions for finding your key and encrypting it [here](https://docs.travis-ci.com/user/deployment/npm/). I usually create and authenticate a new single-purpose npm account (such as libtastic-publisher) for this publishing, but you can also just use your personal account.
+3. If you want coverage reporting with Coveralls, you need to turn on reporting for your repo https://coveralls.io.
 
 ## TODO
 - A sample README with good basic documentation?
