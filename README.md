@@ -63,7 +63,7 @@ Use [npm version](https://docs.npmjs.com/cli/version). Enter `npm version patch`
 1. Your tests will run (because of the `preversion` script defined in `package.json`)
 2. Your `package.json` will be updated with the new version number and a git tag will be created.
 3. Your code/tag will be pushed to `origin master`.  Note that if you normally push code to somewhere other than `origin master`, or if you don't want to automatically push, you should update the `postversion` script.
-4. Your code/tag will be published to npm from Travis CI after the build is finished.
+4. Your code/tag will be published to npm from Travis CI after the build is finished. Note that although they are gitignored, built assets in `dist/` WILL be published to npm because they are re-included in `.npmignore`.
 
 ## Travis CI
 
