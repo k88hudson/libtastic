@@ -6,7 +6,7 @@ This is an example of how to write and publish a JS library for node and the bro
 
 ## What is supported?
 
-This repo shows you how publish a library designed to be usable in:
+This repo shows you how publish a library that is usable in:
 
 - node 6+, with `npm install` and `require`,
 - a modern browser, with `npm install` and `require`, via a build system (e.g. Webpack or Browserify), or
@@ -50,13 +50,13 @@ There two kinds of tests included. Both use `mocha` and `chai` for test definiti
 
 All the tests can be run with `npm test`, and are called from commands in `package.json`.
 
-# How to publish a new version
+## How to publish a new version
 
-## tdlr;
+### tdlr;
 
 Just run `npm version [patch/minor/major]`. That's it.
 
-## How this works
+### How this works
 
 Use [npm version](https://docs.npmjs.com/cli/version). Enter `npm version patch` in your terminal for a new patch version, `npm version minor` for a minor version, etc. This will trigger the following:
 
@@ -65,7 +65,7 @@ Use [npm version](https://docs.npmjs.com/cli/version). Enter `npm version patch`
 3. Your code/tag will be pushed to `origin master`.  Note that if you normally push code to somewhere other than `origin master`, or if you don't want to automatically push, you should update the `postversion` script.
 4. Your code/tag will be published to npm from Travis CI after the build is finished.
 
-# Travis CI
+## Travis CI
 
 The Travis configuration in `.travis.yml` sets up a few things for CI:
 
