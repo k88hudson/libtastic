@@ -7,9 +7,10 @@
     "bundle": "webpack --optimize-ocurrence-order",
     "start": "live-server . --port=1987 & npm run bundle -- -w",
     "test": "npm run bundle && npm run test:node && npm run test:browser && npm run test:integration",
-    "test:node": "mocha test/unit/**.js",
+    "test:node": "istanbul cover _mocha -- test/unit/**.js",
     "test:browser": "karma start test/karma.conf.js",
     "test:integration": "karma start test/karma.integration.conf.js",
+    "travis": "npm test && cat ./coverage/lcov.info | coveralls",
     "preversion": "npm test",
     "postversion": "git push origin master --tags"
   },
@@ -17,6 +18,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
     "karma": "^1.3.0",
     "karma-chai": "^0.1.0",
     "karma-firefox-launcher": "^1.0.0",

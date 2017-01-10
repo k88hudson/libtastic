@@ -15,7 +15,7 @@ install:
 - npm config set spin false
 - npm install
 script:
-- npm test
+- npm run travis
 deploy:
   provider: npm
   email: k88hudson+libtastic@gmail.com

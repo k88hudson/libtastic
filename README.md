@@ -1,6 +1,7 @@
 # libtastic
 
 ![Travis status](https://travis-ci.org/k88hudson/libtastic.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/k88hudson/libtastic/badge.svg)](https://coveralls.io/github/k88hudson/libtastic)
 
 This is an example of how to write and publish a JS library for node and the browser, including tests, publish scripts, and other useful things.
 
@@ -10,6 +11,7 @@ This is an example of how to write and publish a JS library for node and the bro
 - a Travis CI account
 - the Travis cli (for encrypting your npm auth token)
 - an npm account
+- Coveralls account linked to your Github (if you want coverage reporting with Coveralls)
 
 ## What is supported?
 
