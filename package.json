@@ -1,6 +1,6 @@
 {
   "name": "libtastic",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "An example lib for node and the browser",
   "main": "src/libtastic.js",
   "scripts": {
