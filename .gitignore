@@ -1,5 +1,6 @@
 node_modules/
 dist/
 .DS_Store
+^ I like a global ignore for ".DS_Store" personally.  https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
 *.log
 coverage/
