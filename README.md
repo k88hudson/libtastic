@@ -103,7 +103,7 @@ This project also includes an integration test, which can be found in `test/inte
 - The pre-built version of the browser actually exports a global variable
 - We forget to run `npm run package` before publishing (the test fails if `npm run package` wasn't run first)
 
-Overkill? Maybe. But it helps reassure me I didn't mess up by weback export config or publishing flow.
+Overkill? Maybe. But it helps reassure me I didn't mess up by Webpack export config or publishing flow.
 
 ## Things you will need as a library author
 
